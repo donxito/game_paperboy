@@ -2,9 +2,9 @@
 
 ## Define the Game MVP:
 
-- **Player Movement:** Implement basic player movement controls for driving the bike left and right on the game canvas.
+- **Player Movement:** Implement basic player movement controls for driving the bike on the game canvas.
   
-- **Obstacles:** Introduce a single type of obstacle (e.g., cars) that the player needs to avoid while riding the bike.
+- **Obstacles:** Introduce a single type of obstacle (cars) that the player needs to avoid while riding the bike.
   
 - **User Input:** Handle user input for controlling the bike's movement and allowing the player to throw newspapers.
   
@@ -16,21 +16,20 @@
 
 ### Milestone 1 - Project Setup and Player Movement
 
-- **Project Initial Setup:**
-  - Set up the HTML file with a canvas element for rendering the game.
+- **Project Initial Setup:** - **DONE**
+  - Set up the HTML file with a canvas element for rendering the game. 
   - Style the canvas using CSS to position it on the web page.
   - Create player element.
 
-- **Player Class:**
+- **Player Class:** **DONE**
   - Create a Player class with properties for position and speed.
   
-- **Game Class:**
-  - Implement basic player movement controls for driving the bike left and right on the game canvas.
-  - Test and ensure smooth player movement within the game environment.
-  - Implement methods in the Player class to move the player up and down based on user input.
+- **Game Class:** **DONE**
+  - Implement basic player movement controls for driving the bike on the game canvas.
+  - Implement methods in the Player class to move based on user input.
   - Ensure the player stays within the game boundaries.
 
-### Milestone 2 - Obstacles and User Input
+### Milestone 2 - Obstacles and throw objects 
 
 - **Obstacles:**
   - Introduce a single type of obstacle (e.g., cars) that the player needs to avoid while riding the bike.
@@ -38,9 +37,11 @@
   - Create an Obstacle class with properties for position and speed.
   - Implement a method in the Obstacle class to move the obstacle from right to left.
 
-- **User Input:**
+- **Throw objects:**
   - Handle user input for controlling the bike's movement and allowing the player to throw newspapers.
-  - Test user input functionality and ensure responsiveness.
+  - Implement a method in the Player class to throw newspapers.
+  - Create a mechanism to track and render newspapers.
+  - Check for collisions between newspapers and obstacles and the correct place to throw them.
 
 ### Milestone 3 - Game State and Basic Logic. Collision Detection
 
@@ -58,29 +59,23 @@
   - Create a method in the Game class to check for collisions between the player and obstacles.
   - End the game or lose energy/health/lives and display the score when a collision occurs.
 
-### Milestone 4 - Newspaper Throwing
-
-- Allow the player to throw newspapers.
-- Implement a method in the Player class to throw newspapers.
-- Create a mechanism to track and render newspapers.
-- Check for collisions between newspapers and obstacles and the correct place to throw them.
-
-### Milestone 5 - Score Tracking
+### Milestone 4 - Score Tracking
 
 - Track the player's score based on successful deliveries.
 - Add a score property to the Player class.
 - Increment the score when a newspaper is successfully delivered (avoiding obstacles).
 
-### Milestone 6 - Game Over Screen
+### Milestone 5 - Game Over Screen
 
 - Display a game over screen with the final score when the game ends.
 - Implement a game over condition (e.g., collisions with obstacles).
 - Display the final score on the screen when the game is over.
 - Allow the player to restart the game.
 
-### Milestone 7 - Rendering and Testing
+### Milestone 6 - Rendering and Testing
 
 - **Rendering:**
+  - Ensure smooth player movement within the game environment.
   - Add sound effects for player actions (throwing newspapers, collisions, etc.).
   - Write a function to render the game elements on the canvas, including the player, obstacles, health/energy, and score.
   - Use JavaScript to draw the game elements on the canvas based on their positions and states.

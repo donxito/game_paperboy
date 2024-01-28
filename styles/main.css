@@ -21,10 +21,10 @@ body {
 #game-road {
     background-color: blanchedalmond;
     width: 100vw;
-    height: 45vh;
+    height: 50vh;
     position: absolute;
-    top: 30%;
-    /* Missing to add the road game */
+    top: 25%;
+    /* Missing to add the road to div */
    
 }
 

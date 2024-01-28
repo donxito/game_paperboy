@@ -2,7 +2,7 @@
 class Player {
     constructor() {
         this.positionX = 0; // horizontal position
-        this.positionY = 50; // vertical position
+        this.positionY = 25; // vertical position
        
         this.speed = 3;
 
@@ -33,7 +33,7 @@ class Player {
         this.player.style.left = `${this.positionX}vw`; // move left, right
 
         // append to the DOM parent
-        const playerElement = document.getElementById("game-container");
+        const playerElement = document.getElementById("game-road");
         playerElement.appendChild(this.player);
     }
 
@@ -43,6 +43,29 @@ class Player {
         // Update the player's position on the screen
         this.player.style.top = `${this.positionY}vh`;
         this.player.style.left = `${this.positionX}vw`;
+
+
+        // function to keeop the player on the screen
+        this.checkBoundaries(); 
+    }
+
+    checkBoundaries() {
+        // vertical
+        if (this.positionY < 0) {
+            this.positionY = 5;
+        } 
+        else if (this.positionY > 45) {
+            this.positionY = 43;
+        }
+        
+
+        // horizontal
+        if (this.positionX < 0) {
+            this.positionX = 5;
+        }
+        else if (this.positionX + this.width > 100) {
+            this.positionX = 100 - this.width;
+        }
     }
 
     moveUp() {
@@ -64,7 +87,6 @@ class Player {
         this.positionX -= this.speed;
         this.updatePlayerPosition();
     }
-
    
 }
 
