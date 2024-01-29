@@ -10,6 +10,8 @@ class Obstacle {
         this.positionY = 0;
 
         this.createObstacleElement();
+
+        // missing cars image
     }
 
     createObstacleElement() {
@@ -59,33 +61,34 @@ class Obstacle {
     }  
     checkCollision() {
         // check for collision with the player
-      
+        //  get the dimensions of the player and the obstacle
+        // The Element.getBoundingClientRect() method returns a DOMRect object providing information about the size of an element and its position relative to the viewport.
+
        const playerDomRect = this.player.getBoundingClientRect();
        const obstacleDomRect = this.obstacle.getBoundingClientRect();
 
-       console.log('Player Rect:', playerDomRect);
-       console.log('Obstacle Rect:', obstacleDomRect);
-
+        // formula to check collision
        if (
            playerDomRect.bottom > obstacleDomRect.top &&
            playerDomRect.top < obstacleDomRect.bottom &&
            playerDomRect.right > obstacleDomRect.left &&
            playerDomRect.left < obstacleDomRect.right
        ) {
+           
+           // Handle collision
            console.log("Collision detected!");
-           // Handle collision logic here
-           // For example, stop the game, show a game over message, etc.
+           game.player.collide();
        }
+   } 
    
-
-   }  
+   
 }
 
 const obstacles = []; // array of obstacles
 
 // generate new obstacles
 setInterval(() => {
-    const newObstacles = new Obstacle();
+    const newObstacles = new Obstacle(player);
     obstacles.push(newObstacles);
 }, 1500);
 
@@ -93,6 +96,7 @@ setInterval(() => {
 setInterval(() => {
     obstacles.forEach((obstacle) => {
         obstacle.moveObstacle();
+        obstacle.checkCollision();
     })
 }, 100);
 

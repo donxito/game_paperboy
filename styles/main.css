@@ -16,6 +16,7 @@ body {
 #player {
     background-color: blue;
     position: absolute;
+      /* Missing to add the bike to div */
 }
 
 #game-road {
@@ -31,4 +32,11 @@ body {
 .obstacle {
     background-color: darkgreen;
     position: absolute;
+      /* Missing to add the car to div */
+}
+
+.newspaper {
+    background-color: darkturquoise;
+  
+      /* Missing to add the newspaper to div */
 }

@@ -5,14 +5,18 @@ class Player {
         this.positionY = 25; // vertical position
        
         this.speed = 3;  // speed
+        
 
         this.width = 5; // width size
         this.height = 5; // height size
 
         this.score = 0;
-        this.lives = 3;
+        this.health = 10;
 
         this.player = null;
+
+        this.newspapers = [];
+        this.angle =  1;   // angle in degrees  for shooting
 
         this.createPlayer();
 
@@ -26,6 +30,7 @@ class Player {
 
         // add/modify content
         this.player.setAttribute("id", "player");
+
         // this.player.style.position = "absolute"
         this.player.style.width = `${this.width}vw`; // width size
         this.player.style.height = `${this.height}vh`; // height size
@@ -37,9 +42,9 @@ class Player {
         playerElement.appendChild(this.player);
     }
 
-    // methods to the player movement
-
+    // methods for the player movement
     updatePlayerPosition() {
+
         // Update the player's position on the screen
         this.player.style.top = `${this.positionY}vh`;
         this.player.style.left = `${this.positionX}vw`;
@@ -87,30 +92,54 @@ class Player {
             this.positionX = 100 - this.width;
         }
     }
-   
+
+    collide() {
+        this.health--;
+        if(this.health === 0){
+            alert(`Game Over! You scored ${this.score}`);
+            location.reload(); // reloads the current document.
+
+        }  
+
+    }
+
+    shootNewspaper() {
+        const newspaper = new Newspaper({
+            positionX: this.positionX + this.width,
+            positionY: this.positionY + (this.height / 2),
+        },  this.angle);
+        this.newspapers.push(newspaper);
+
+        newspaper.throwNewspaper();
+    }
+
+  
+
+
 }
 
 // Function to handle key press events the player movement
 function handleKeyPress(event) {
     switch (event.key) {
-        case 'ArrowUp':
+        case "ArrowUp":
             game.player.moveUp();
             break;
-        case 'ArrowDown':
+        case "ArrowDown":
             game.player.moveDown();
             break;
-        case 'ArrowRight':
+        case "ArrowRight":
             game.player.moveForward();
             break;
-        case 'ArrowLeft':
+        case "ArrowLeft":
             game.player.moveBackward();
+            break;
+        case "Space":
+            game.player.shootNewspaper();
             break;
         default:
            
             break;
     }
-
-    
 
     
 }

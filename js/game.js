@@ -1,14 +1,20 @@
 class Game {
     constructor() {
-        this.start; 
+        // this.start; 
         this.player = new Player();
-        this.obstacle = new Obstacle();
+        this.obstacle = new Obstacle(this.player);
+        this.newspaper = new Newspaper(this.player);
         this.obstacles = [];
         this.gameIsOver = false;
         this.obstacleInterval = null;
 
         //this.startGame();
-      
-        
+
+    
+
     }
+
+   
+
+    
 }
