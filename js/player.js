@@ -4,7 +4,7 @@ class Player {
         this.positionX = 0; // horizontal position
         this.positionY = 25; // vertical position
        
-        this.speed = 3;
+        this.speed = 3;  // speed
 
         this.width = 5; // width size
         this.height = 5; // height size
@@ -49,25 +49,6 @@ class Player {
         this.checkBoundaries(); 
     }
 
-    checkBoundaries() {
-        // vertical
-        if (this.positionY < 0) {
-            this.positionY = 5;
-        } 
-        else if (this.positionY > 45) {
-            this.positionY = 43;
-        }
-        
-
-        // horizontal
-        if (this.positionX < 0) {
-            this.positionX = 5;
-        }
-        else if (this.positionX + this.width > 100) {
-            this.positionX = 100 - this.width;
-        }
-    }
-
     moveUp() {
         this.positionY -= this.speed;
         this.updatePlayerPosition();
@@ -86,6 +67,25 @@ class Player {
     moveBackward() {
         this.positionX -= this.speed;
         this.updatePlayerPosition();
+    }
+
+    checkBoundaries() {
+        // vertical
+        if (this.positionY < 0) {
+            this.positionY = 5;
+        } 
+        else if (this.positionY > 45) {
+            this.positionY = 43;
+        }
+        
+
+        // horizontal
+        if (this.positionX < 0) {
+            this.positionX = 5;
+        }
+        else if (this.positionX + this.width > 100) {
+            this.positionX = 100 - this.width;
+        }
     }
    
 }
@@ -109,6 +109,10 @@ function handleKeyPress(event) {
            
             break;
     }
+
+    
+
+    
 }
 
 // Event listener for keydown events

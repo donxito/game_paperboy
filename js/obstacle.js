@@ -1,6 +1,7 @@
 class Obstacle {
-    constructor() {
-        this.width = 10;
+    constructor(player) {
+        this.player = player
+        this.width = 12;
         this.height = 10;
 
         this.obstacle = null;
@@ -31,7 +32,8 @@ class Obstacle {
 
         const gameRoadHeight = document.getElementById("game-road").offsetHeight;
         const maxBottom = gameRoadHeight - this.height;
-        const randomBottom = Math.floor(Math.random() * maxBottom);
+        const randomBottom = Math.floor(Math.random() * maxBottom ) + 1;
+    
         
         // set initial positionY
         this.obstacle.style.bottom = `${randomBottom}px` 
@@ -45,32 +47,55 @@ class Obstacle {
     }
 
     moveObstacle() {
-        this.positionX -= 3;
+        this.positionX -= 5; //speed
         this.obstacle.style.left = `${this.positionX}vw`;
-        console.log("Moving from right to left side")
 
-       
+
+       // removing obstacle from DOM and array
         if (this.positionX + this.width < 0) {
             this.obstacle.remove();  // remove the obstacles when out of the screen
-        }
-        
-    } 
+            obstacles.splice(obstacles.indexOf(this), 1); //  delete from obstacles array
+        }    
+    }  
+    checkCollision() {
+        // check for collision with the player
+      
+       const playerDomRect = this.player.getBoundingClientRect();
+       const obstacleDomRect = this.obstacle.getBoundingClientRect();
 
-    
+       console.log('Player Rect:', playerDomRect);
+       console.log('Obstacle Rect:', obstacleDomRect);
+
+       if (
+           playerDomRect.bottom > obstacleDomRect.top &&
+           playerDomRect.top < obstacleDomRect.bottom &&
+           playerDomRect.right > obstacleDomRect.left &&
+           playerDomRect.left < obstacleDomRect.right
+       ) {
+           console.log("Collision detected!");
+           // Handle collision logic here
+           // For example, stop the game, show a game over message, etc.
+       }
+   
+
+   }  
 }
 
 const obstacles = []; // array of obstacles
 
+// generate new obstacles
 setInterval(() => {
     const newObstacles = new Obstacle();
     obstacles.push(newObstacles);
 }, 1500);
 
+// move obstacles
 setInterval(() => {
     obstacles.forEach((obstacle) => {
         obstacle.moveObstacle();
     })
 }, 100);
+
 
 
 
