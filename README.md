@@ -14,36 +14,46 @@
 
 ## Milestones:
 
-### Milestone 1 - Project Setup and Player Movement
+### Milestone 1 - Project Setup and Player Movement 
 
-- **Project Initial Setup:** - **DONE**
+- **Project Initial Setup:** - 
   - Set up the HTML file with a canvas element for rendering the game. 
   - Style the canvas using CSS to position it on the web page.
   - Create player element.
 
-- **Player Class:** **DONE**
+- **Player Class:** 
   - Create a Player class with properties for position and speed.
   
-- **Game Class:** **DONE**
+- **Game Class:** 
   - Implement basic player movement controls for driving the bike on the game canvas.
   - Implement methods in the Player class to move based on user input.
   - Ensure the player stays within the game boundaries.
 
-### Milestone 2 - Obstacles and throw objects 
+### Milestone 2 - Obstacles 
 
-- **Obstacles:**
+- **Obstacles:** 
   - Introduce a single type of obstacle (e.g., cars) that the player needs to avoid while riding the bike.
   - Randomly generate and position obstacles on the game canvas.
   - Create an Obstacle class with properties for position and speed.
   - Implement a method in the Obstacle class to move the obstacle from right to left.
+  - Obstacle needs to say inside the div height
 
-- **Throw objects:**
+
+### Milestone 3 -  Collision Detection and Throw object
+
+- **Collision Detection:**
+  - Define game over conditions when the player collides with obstacles.
+  - Implement basic collision detection between the player and obstacles.
+  - Create a method in the Game class to check for collisions between the player and obstacles.
+  - End the game or lose energy/health/lives and display the score when a collision occurs.
+
+   **Throw objects:**
   - Handle user input for controlling the bike's movement and allowing the player to throw newspapers.
   - Implement a method in the Player class to throw newspapers.
   - Create a mechanism to track and render newspapers.
   - Check for collisions between newspapers and obstacles and the correct place to throw them.
 
-### Milestone 3 - Game State and Basic Logic. Collision Detection
+### Milestone 4 - Game State, Basic Logic, Score Tracking
 
 - **Game State:**
   - Define variables for the player, obstacles, score, and game state.
@@ -52,18 +62,9 @@
 - **Basic Game Logic:**
   - Implement basic game logic for scoring points when the player successfully delivers newspapers to houses.
   - Define game over conditions when the player fails to deliver newspapers.
-
-- **Collision Detection:**
-  - Define game over conditions when the player collides with obstacles.
-  - Implement basic collision detection between the player and obstacles.
-  - Create a method in the Game class to check for collisions between the player and obstacles.
-  - End the game or lose energy/health/lives and display the score when a collision occurs.
-
-### Milestone 4 - Score Tracking
-
-- Track the player's score based on successful deliveries.
-- Add a score property to the Player class.
-- Increment the score when a newspaper is successfully delivered (avoiding obstacles).
+    - Track the player's score based on successful deliveries.
+  - Add a score property to the Player class.
+  - Increment the score when a newspaper is successfully delivered (avoiding obstacles).
 
 ### Milestone 5 - Game Over Screen
 
@@ -75,7 +76,7 @@
 ### Milestone 6 - Rendering and Testing
 
 - **Rendering:**
-  - Ensure smooth player movement within the game environment.
+  - Ensure smooth player movement within the game environment. **TO FIX**
   - Add sound effects for player actions (throwing newspapers, collisions, etc.).
   - Write a function to render the game elements on the canvas, including the player, obstacles, health/energy, and score.
   - Use JavaScript to draw the game elements on the canvas based on their positions and states.
