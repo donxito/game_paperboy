@@ -1,6 +1,13 @@
 console.log("hello there");
 
 
-// Create a new game instance
-const game = new Game();
 
+
+// Initialize the game object
+const game = {
+    player: new Player(),
+};
+
+// Event listener for keydown events
+document.addEventListener('keydown', handleKeyPress);
+document.addEventListener("keydown", handleKeydown);

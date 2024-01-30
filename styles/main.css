@@ -1,42 +1,122 @@
-
 body {
-    
     padding: 0;
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #1d1d1d; /* Choose your background color */
 }
 
-#game-container {
-    background-color: brown;
-    height: 100vh;
+#game-canvas {
+    width: 80vw;/* Adjust the width as needed */
+    height: 90vh; /* Adjust the height as needed */
     position: relative;
-    overflow: hidden;
 
+    border: 2px solid #fff; /* Optional: Border for the game canvas */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    overflow: hidden;
+   
+
+}
+
+
+#game-container {
+    background-image: url("../img/Soil_Tile.png");
+    height: 100vh;
+    overflow: hidden;
+    z-index: -2;
+    align-content: center;
+    justify-content: center;
+    padding: 20px 0px;
+    background-repeat: repeat;
 }
 
 #player {
-    background-color: blue;
     position: absolute;
-      /* Missing to add the bike to div */
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 #game-road {
-    background-color: blanchedalmond;
     width: 100vw;
-    height: 50vh;
-    position: absolute;
-    top: 25%;
-    /* Missing to add the road to div */
-   
+    height: 60vh;
+    position: relative;
+    background-image: url('../img/road1.png');
+    background-size: contain;
+    overflow: hidden;
+    animation: road 10s linear infinite;
+}
+
+@keyframes road {
+    0% {
+        background-position: 2000px 0;
+    }
+    100% {
+        background-position: -200px 0;
+    }
 }
 
 .obstacle {
-    background-color: darkgreen;
     position: absolute;
-      /* Missing to add the car to div */
 }
 
 .newspaper {
-    background-color: darkturquoise;
-  
-      /* Missing to add the newspaper to div */
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    z-index: 2;
+    opacity: 1;
+    display: block;
 }
+
+.mailbox {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    position: absolute;
+    bottom: 0;
+}
+
+#houses-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    animation: moveHouses 10s linear infinite;
+}
+
+@keyframes moveHouses {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-200px);
+    }
+}
+
+.house,
+.tree {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 40vh;
+    width: 30vw;
+    margin: 8px;
+}
+
+#house1 {
+    background-image: url('../img/house1.png');
+}
+
+#house2 {
+    background-image: url('../img/house2.png');
+}
+
+#tree1 {
+    background-image: url('../img/Tree_01.png');
+}
+
+#tree2 {
+    background-image: url('../img/Tree_02.png');
+}
+

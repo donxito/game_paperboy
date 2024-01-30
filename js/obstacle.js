@@ -1,8 +1,8 @@
 class Obstacle {
     constructor(player) {
         this.player = player
-        this.width = 12;
-        this.height = 10;
+        this.width = 16;
+        this.height = 12;
 
         this.obstacle = null;
 
@@ -24,6 +24,13 @@ class Obstacle {
         this.obstacle.style.width = `${this.width}vw`; // width size
         this.obstacle.style.height = `${this.height}vh`; // height size
 
+        // create and append an image element
+        const obstacleImage = document.createElement("img");
+        obstacleImage.src = "./img/car.png";
+        obstacleImage.style.width = "100%";
+        obstacleImage.style.height = "100%";
+        this.obstacle.appendChild(obstacleImage)
+
         // append to the DOM parent
         const obstacleElement = document.getElementById("game-road");
         obstacleElement.appendChild(this.obstacle);
@@ -34,7 +41,7 @@ class Obstacle {
 
         const gameRoadHeight = document.getElementById("game-road").offsetHeight;
         const maxBottom = gameRoadHeight - this.height;
-        const randomBottom = Math.floor(Math.random() * maxBottom ) + 1;
+        const randomBottom = Math.floor(Math.random() * (maxBottom / 2)) + maxBottom / 4;
     
         
         // set initial positionY
@@ -69,10 +76,10 @@ class Obstacle {
 
         // formula to check collision
        if (
-           playerDomRect.bottom > obstacleDomRect.top &&
-           playerDomRect.top < obstacleDomRect.bottom &&
-           playerDomRect.right > obstacleDomRect.left &&
-           playerDomRect.left < obstacleDomRect.right
+           playerDomRect.bottom >= obstacleDomRect.top &&
+           playerDomRect.top <= obstacleDomRect.bottom &&
+           playerDomRect.right >= obstacleDomRect.left &&
+           playerDomRect.left <= obstacleDomRect.right
        ) {
            
            // Handle collision
@@ -90,7 +97,7 @@ const obstacles = []; // array of obstacles
 setInterval(() => {
     const newObstacles = new Obstacle(player);
     obstacles.push(newObstacles);
-}, 1500);
+}, 2000);
 
 // move obstacles
 setInterval(() => {
