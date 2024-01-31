@@ -23,7 +23,7 @@ class Newspaper {
 
     throwNewspaper() {
         const speed = this.speed * this.direction;
-        const maxDistance = 900;
+        const maxDistance = 180;
 
         this.positionY += speed;
         this.newspaper.style.top = `${this.positionY}px`;
@@ -31,8 +31,7 @@ class Newspaper {
         if (this.positionY < 0 || this.positionY > window.innerHeight || this.traveledDistance >= maxDistance) {
             this.removeNewspaper();
         }
-        this.traveledDistance += speed;    
-        
+        this.traveledDistance += speed;       
        
     }
 
@@ -68,8 +67,6 @@ class Newspaper {
             }
         });
     }
-    
-
 
 }
 

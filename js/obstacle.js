@@ -11,7 +11,7 @@ class Obstacle {
 
         this.createObstacleElement();
 
-        // missing cars image
+      
     }
 
     createObstacleElement() {
@@ -55,7 +55,7 @@ class Obstacle {
 
 
     moveObstacle() {
-        this.positionX -= 5; //speed
+        this.positionX -= 7; //speed
         this.obstacle.style.left = `${this.positionX}vw`;
 
 
@@ -67,7 +67,7 @@ class Obstacle {
     }  
 
     checkCollision() {
-        // check for collision with the player
+       
         //  get the dimensions of the player and the obstacle
         // The Element.getBoundingClientRect() method returns a DOMRect object providing information about the size of an element and its position relative to the viewport.
 
@@ -87,8 +87,7 @@ class Obstacle {
            game.player.collide(); 
 
        }
-   } 
-   
+   }   
    
 }
 

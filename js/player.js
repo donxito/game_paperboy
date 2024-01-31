@@ -117,31 +117,7 @@ class Player {
 
             console.log("Scored!")
         }
-    }
-
-    throwNewspaper() {
-        const direction = 1; // Set the direction to the same as the player
-
-        const newspaper = new Newspaper({
-            positionX: this.positionX + this.width,
-            positionY: this.positionY + (this.height / 2),
-            direction: direction, // Pass the direction to the Newspaper constructor
-        });
-
-        this.newspapers.push(newspaper);
-
-        // Append the newspaper to the player element
-        const playerElement = document.getElementById("player");
-        newspaper.createNewspaper(playerElement);
-
-        const moveNewspaperInterval = setInterval(() => {
-            newspaper.throwNewspaper();
-
-            if (!document.body.contains(newspaper.newspaper)) {
-                clearInterval(moveNewspaperInterval);
-            }
-        }, 100); // Adjust the interval animation
-    }
+    } 
 }
 
 
