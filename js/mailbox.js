@@ -1,8 +1,8 @@
 class Mailbox {
     constructor(player) {
         this.player = player;
-        this.width = 10;
-        this.height = 8;
+        this.width = 8;
+        this.height = 6;
         this.positionX = 100;
         this.positionY = 0;
         this.mailbox = null;
@@ -98,3 +98,4 @@ setInterval(() => {
         mailbox.checkCollision();
     });
 }, 200);
+

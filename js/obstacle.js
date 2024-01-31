@@ -1,8 +1,8 @@
 class Obstacle {
     constructor(player) {
         this.player = player
-        this.width = 16;
-        this.height = 12;
+        this.width = 18;
+        this.height = 16;
 
         this.obstacle = null;
 
@@ -98,7 +98,7 @@ const obstacles = []; // array of obstacles
 setInterval(() => {
     const newObstacles = new Obstacle(player);
     obstacles.push(newObstacles);
-}, 2000);
+}, 1000);
 
 // move obstacles
 setInterval(() => {
@@ -106,7 +106,7 @@ setInterval(() => {
         obstacle.moveObstacle();
         obstacle.checkCollision();
     })
-}, 100);
+}, 80);
 
 
 

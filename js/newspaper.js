@@ -3,8 +3,8 @@ class Newspaper {
         this.positionX = player.positionX;
         this.positionY = player.positionY;
         this.width = 40;
-        this.height = 50 ;
-        this.speed = 5;
+        this.height = 50;
+        this.speed = 6;
         this.direction = 1;
         this.traveledDistance = 0;
         this.newspaper = this.createNewspaper();
@@ -12,12 +12,18 @@ class Newspaper {
 
     createNewspaper() {
         const newspaperElement = document.createElement("img");
-        newspaperElement.src = "./img/newspaper.png";
+        newspaperElement.src = "./img/newspaper1.png";
+        newspaperElement.classList.add('newspaper');
+
+
+        newspaperElement.style.border = "2px solid #F3F30B"
+        
         newspaperElement.style.position = "absolute";
         newspaperElement.style.width = `${this.width}px`;
         newspaperElement.style.height = `${this.height}px`;
         newspaperElement.style.left = `${this.positionX}px`;
         newspaperElement.style.top = `${this.positionY}px`;
+
         return newspaperElement;
     }
 

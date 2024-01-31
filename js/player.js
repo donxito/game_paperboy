@@ -3,10 +3,10 @@ class Player {
         this.positionX = 0; // horizontal position
         this.positionY = 25; // vertical position
         
-        this.width = 8; // width size
-        this.height = 10; // height size
+        this.width = 10; // width size
+        this.height = 12; // height size
 
-        this.speed = 5;  
+        this.speed = 10;  
 
         this.score = 0;
         this.health = 15;
@@ -72,10 +72,10 @@ class Player {
     checkBoundaries() {
         // vertical
         if (this.positionY < 0) {
-            this.positionY = 5;
+            this.positionY = 8;
         } 
-        else if (this.positionY > 45) {
-            this.positionY = 43;
+        else if (this.positionY > 40) {
+            this.positionY = 35;
         }
 
         // horizontal
@@ -100,6 +100,7 @@ class Player {
         if (this.health === 0) {
             alert(`Game Over! You scored ${this.score}`);
             location.reload();
+            location.href = "game-over.html"  //game over screen
         }
     }
     
