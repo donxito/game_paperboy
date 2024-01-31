@@ -2,9 +2,9 @@ class Newspaper {
     constructor(player) {
         this.positionX = player.positionX;
         this.positionY = player.positionY;
-        this.width = 16;
-        this.height = 26 ;
-        this.speed = 4;
+        this.width = 40;
+        this.height = 50 ;
+        this.speed = 5;
         this.direction = 1;
         this.traveledDistance = 0;
         this.newspaper = this.createNewspaper();
@@ -12,7 +12,7 @@ class Newspaper {
 
     createNewspaper() {
         const newspaperElement = document.createElement("img");
-        newspaperElement.src = "newspaper.png";
+        newspaperElement.src = "./img/newspaper.png";
         newspaperElement.style.position = "absolute";
         newspaperElement.style.width = `${this.width}px`;
         newspaperElement.style.height = `${this.height}px`;
@@ -31,7 +31,9 @@ class Newspaper {
         if (this.positionY < 0 || this.positionY > window.innerHeight || this.traveledDistance >= maxDistance) {
             this.removeNewspaper();
         }
-        this.traveledDistance += speed;      
+        this.traveledDistance += speed;    
+        
+       
     }
 
     removeNewspaper() {
@@ -74,6 +76,8 @@ class Newspaper {
 function handleKeydown(event) {
     if (event.code === "Space") {
         console.log("Space bar was pressed");
+        const shoot = new Audio("sound/Shoot_2.wav");
+        shoot.play();
 
         // Remove the previous newspaper (if any)
         if (game.player.newspapers.length > 0) {
@@ -108,5 +112,3 @@ function handleKeydown(event) {
     }
 }
 
-// Space key event listeners
-document.addEventListener("keydown", handleKeydown);

@@ -1,43 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PaperBoy</title>
-    <link rel="shortcut icon" href="">  <!-- To remove this console.log error: "Failed to load resource: the server responded with a status of 404 (Not Found)"-->
+    <link rel="shortcut icon" href="">
+    <!-- To remove this console.log error: "Failed to load resource: the server responded with a status of 404 (Not Found)"-->
 
     <link rel="stylesheet" href="./styles/main.css">
 
 </head>
 
 <body>
-    <!--div for the game---------->
+
+
+
     <div id="game-canvas">
+        <!--div for game intro---------->
+        <div id="game-intro"></div>
+
+
+
+        <!--div for game play---------->
         <div id="game-container">
-            <div id="game-road"></div> 
+            <div id="game-road"></div>
             <div id="houses-container">
                 <div class="house" id="house1"></div>
                 <div class="tree" id="tree1"></div>
                 <div class="house" id="house2"></div>
                 <div class="tree" id="tree2"></div>
+                <div class="house" id="house1"></div>
+                <div class="tree" id="tree1"></div>
             </div>
-            
-            
-        
-    
+            <div id="info-container">
+                <div id="score-display">Score: 0</div>
+                <div id="energy-container">
+                    <p id="energy">Health:</p>
+                    <div id="bar"></div>
+
+                </div>
+
+            </div>
         </div>
-    
+
+         <!--div for game over---------->
+        <div id="game-over"></div>
+
+
     </div>
 
-    
+    </div>
 
 
 
- 
+
+
+
     <script src="./js/player.js"></script>
     <script src="./js/newspaper.js"></script>
     <script src="./js/mailbox.js"></script>
     <script src="./js/obstacle.js"></script>
     <script src="./js/main.js"></script>
 </body>
+
 </html>

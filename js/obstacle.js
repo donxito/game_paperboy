@@ -50,10 +50,9 @@ class Obstacle {
         //  set initial positionX
         this.obstacle.style.left = `${this.positionX}vw`
 
-       
-
         this.moveObstacle();
     }
+
 
     moveObstacle() {
         this.positionX -= 5; //speed
@@ -66,6 +65,7 @@ class Obstacle {
             obstacles.splice(obstacles.indexOf(this), 1); //  delete from obstacles array
         }    
     }  
+
     checkCollision() {
         // check for collision with the player
         //  get the dimensions of the player and the obstacle
@@ -84,12 +84,14 @@ class Obstacle {
            
            // Handle collision
            console.log("Collision detected!");
-           game.player.collide();
+           game.player.collide(); 
+
        }
    } 
    
    
 }
+
 
 const obstacles = []; // array of obstacles
 

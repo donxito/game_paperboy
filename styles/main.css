@@ -1,33 +1,51 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+
 body {
     padding: 0;
     margin: 0;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background-color: #1d1d1d; /* Choose your background color */
+    text-align: center;
+    background-image: linear-gradient(
+    0deg,
+    hsl(0deg 34% 36%) 0%,
+    hsl(3deg 41% 38%) 17%,
+    hsl(6deg 48% 40%) 31%,
+    hsl(10deg 56% 41%) 42%,
+    hsl(14deg 65% 41%) 52%,
+    hsl(15deg 65% 44%) 60%,
+    hsl(16deg 66% 46%) 69%,
+    hsl(17deg 67% 49%) 81%,
+    hsl(18deg 71% 51%) 100%
+    );
+    font-family: "Honk", system-ui;
+    font-size: 3rem;
 }
 
-#game-canvas {
-    width: 80vw;/* Adjust the width as needed */
-    height: 90vh; /* Adjust the height as needed */
-    position: relative;
 
-    border: 2px solid #fff; /* Optional: Border for the game canvas */
+
+#game-canvas {
+    width: 80vw;
+    height: 90vh;
+    position: relative;
+    border: 2px solid rgb(0, 0, 0);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content:center;
     overflow: hidden;
-   
+    margin: auto;
 
 }
-
 
 #game-container {
     background-image: url("../img/Soil_Tile.png");
     height: 100vh;
-    overflow: hidden;
     z-index: -2;
     align-content: center;
     justify-content: center;
@@ -86,6 +104,7 @@ body {
     animation: moveHouses 10s linear infinite;
 }
 
+/*
 @keyframes moveHouses {
     0% {
         transform: translateX(0);
@@ -94,14 +113,18 @@ body {
         transform: translateX(-200px);
     }
 }
+*/
 
 .house,
 .tree {
     background-size: contain;
     background-repeat: no-repeat;
-    height: 40vh;
-    width: 30vw;
+    height: 25vh;
+    width: 15vw;
     margin: 8px;
+    padding-bottom: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
 #house1 {
@@ -120,3 +143,48 @@ body {
     background-image: url('../img/Tree_02.png');
 }
 
+#info-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    flex-wrap: nowrap;
+    gap: 60px
+}
+
+#score-display, #energy {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+
+}
+
+#bar {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    width:  15vw;
+    height: 2vh;
+    border-radius: 8px;
+    background-image: linear-gradient(
+        0deg,
+        hsl(240deg 100% 20%) 0%,
+        hsl(329deg 100% 36%) 38%,
+        hsl(17deg 100% 59%) 60%,
+        hsl(55deg 100% 50%) 100%
+);
+    
+}
+
+
+@media (max-width: 600px) {
+    #game-canvas {
+        width: 60vw;
+        height: 60vh;
+    }
+}

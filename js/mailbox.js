@@ -1,8 +1,8 @@
 class Mailbox {
     constructor(player) {
         this.player = player;
-        this.width = 8;
-        this.height = 6;
+        this.width = 10;
+        this.height = 8;
         this.positionX = 100;
         this.positionY = 0;
         this.mailbox = null;
@@ -71,6 +71,7 @@ class Mailbox {
            // Handle collision
            console.log("Collision detected!");
            game.player.collide();
+          
         }
     }
 
@@ -88,7 +89,7 @@ const mailboxes = []; // array of mailboxes
 setInterval(() => {
     const newMailbox = new Mailbox(game.player);
     mailboxes.push(newMailbox);
-}, 7000);
+}, 6000);
 
 // move mailboxes
 setInterval(() => {
@@ -96,4 +97,4 @@ setInterval(() => {
         mailbox.moveMailbox();
         mailbox.checkCollision();
     });
-}, 500);
+}, 200);

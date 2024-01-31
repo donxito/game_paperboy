@@ -9,7 +9,7 @@ class Player {
         this.speed = 5;  
 
         this.score = 0;
-        this.health = 10;
+        this.health = 15;
 
         this.player = null;
 
@@ -89,18 +89,34 @@ class Player {
 
     collide() {
         this.health--;
+        
+        const healthContainer = document.getElementById("bar");
+        const initialHealth = 20;
+        healthContainer.style.width = `${(this.health / initialHealth) * 100}%`;
+
+        const crash = new Audio("sound/Hit_3.wav");
+           crash.play();
+    
         if (this.health === 0) {
             alert(`Game Over! You scored ${this.score}`);
             location.reload();
         }
     }
+    
 
     scoring() {
         this.score++;
-      
-        console.log("Scored!")
-        //document.getElementById('score').innerHTML = `Score: ${this.score}`;
-        // CRIAR DIV SCORE
+
+        const scoreContainer = document.getElementById("score-display");
+
+        if (scoreContainer) {
+            scoreContainer.innerHTML = `Score: ${this.score}`;
+            
+            const coin = new Audio("sound/Coin_5.wav");
+            coin.play();
+
+            console.log("Scored!")
+        }
     }
 
     throwNewspaper() {
@@ -127,7 +143,6 @@ class Player {
         }, 100); // Adjust the interval animation
     }
 }
-
 
 
 function handleKeyPress(event) {
