@@ -2,8 +2,8 @@ class Newspaper {
     constructor(player) {
         this.positionX = player.positionX;
         this.positionY = player.positionY;
-        this.width = 40;
-        this.height = 50;
+        this.width = 34;
+        this.height = 44;
         this.speed = 6;
         this.direction = 1;
         this.traveledDistance = 0;
@@ -29,7 +29,7 @@ class Newspaper {
 
     throwNewspaper() {
         const speed = this.speed * this.direction;
-        const maxDistance = 180;
+        const maxDistance = 400;
 
         this.positionY += speed;
         this.newspaper.style.top = `${this.positionY}px`;

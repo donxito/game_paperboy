@@ -88,6 +88,9 @@ body {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     animation: fade 2s linear;
+    rotate: -8deg;
+
+     
 }
 
 @keyframes fade {
@@ -125,12 +128,15 @@ body {
     opacity: 1;
     display: block;
     border-radius: 4px ;
-    
+    box-shadow:
+    0 0 3px 3px #fff,
+    0 0 10px 10px rgb(227, 209, 5),
+    0 0 10px 10px rgb(224, 11, 192);
 }
+    
+
 
 .mailbox {
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
     position: absolute;
     bottom: 0;
 
