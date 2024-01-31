@@ -76,7 +76,7 @@
 ### Milestone 6 - Rendering and Testing
 
 - **Rendering:**
-  - Ensure smooth player movement within the game environment. **TO FIX**
+  - Ensure smooth player movement within the game environment. 
   - Add sound effects for player actions (throwing newspapers, collisions, etc.).
   - Write a function to render the game elements on the canvas, including the player, obstacles, health/energy, and score.
   - Use JavaScript to draw the game elements on the canvas based on their positions and states.
