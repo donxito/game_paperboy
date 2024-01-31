@@ -3,9 +3,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
 
-body {
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    
     height: 100vh;
     display: flex;
     align-items: center;
@@ -29,11 +37,12 @@ body {
 
 
 
-#game-canvas {
+#game-canvas {   
     width: 80vw;
     height: 90vh;
     position: relative;
     border: 2px solid rgb(0, 0, 0);
+    box-shadow: 0px 6px 20px 10px rgba(255,213,3,1);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -42,6 +51,27 @@ body {
     margin: auto;
 
 }
+
+#game-intro, #game-over {
+    display: none;
+    position: absolute;
+    width: 80vw;
+    height: 90vh;
+    border: 2px solid rgb(0, 0, 0);
+
+    transform: translate(-50%, 50%);
+    text-align: center;
+}
+
+#start-button button,
+#game-over button {
+    font-size: 1,5 rem;
+    padding: 10px 20px;
+}
+
+
+
+
 
 #game-container {
     background-image: url("../img/Soil_Tile.png");
@@ -57,7 +87,13 @@ body {
     position: absolute;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
+    animation: fade 2s linear;
 }
+
+@keyframes fade {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+  }
 
 #game-road {
     width: 100vw;
@@ -88,6 +124,8 @@ body {
     z-index: 2;
     opacity: 1;
     display: block;
+    border-radius: 4px ;
+    
 }
 
 .mailbox {
@@ -95,16 +133,19 @@ body {
     transform: scaleX(-1);
     position: absolute;
     bottom: 0;
+
 }
+
+
 
 #houses-container {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    animation: moveHouses 10s linear infinite;
+    animation: moveHouses 20s linear infinite; 
 }
 
-/*
+
 @keyframes moveHouses {
     0% {
         transform: translateX(0);
@@ -113,7 +154,7 @@ body {
         transform: translateX(-200px);
     }
 }
-*/
+
 
 .house,
 .tree {
