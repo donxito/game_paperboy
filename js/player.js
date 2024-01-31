@@ -100,7 +100,7 @@ class Player {
         if (this.health === 0) {
             alert(`Game Over! You scored ${this.score}`);
             location.reload();
-           // location.href = "game-over.html"  //game over screen
+         
         }
     }
     
