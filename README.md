@@ -2,20 +2,23 @@
 
 This project consists in the creation of a browser-based game using HTML, CSS, JavaScript, DOM manipulation, and Object-Oriented Programming (OOP).
 
-This is a remake of the first game I ever played, back in the 80’s. Paperboy.
+This is a remake of the first game I ever played, back in the 80’s. Paperboy. I wanted to make a simple browser version, where the player "shoots" the newspaper and avoid cars and rocks. But still keeping some of the arcade from the 80's nostalgia. 
 
 ## Technical Requirements
 
 - Render a game in the browser.
 - Have logic for winning and/or losing and show feedback to the player in either case:
-  - Your game must have logic that allows the player to win or lose.
-- Your game code must be organized in separate files for HTML, CSS, and JavaScript.
+- The game must have logic that allows the player to win or lose.
+- The game code must be organized in separate files for HTML, CSS, and JavaScript.
 - Use plain JavaScript for DOM manipulation.
-- Your game entities and elements must be organized using classes and OOP.
+- The game entities and elements must be organized using classes and OOP.
 
 ## The Game (Paperboy, released 1985)
 
 *Paperboy* is an arcade action game developed and published by Atari Games, released in 1985. The player controls a paperboy on a bicycle delivering newspapers along a suburban street. The player attempts to deliver a week of daily newspapers to subscribing customers, attempts to vandalize non-subscribers' homes, and must avoid hazards along the street. Subscribers are lost by missing a delivery or damaging a subscriber's house. If the player loses all of their lives, or runs out of subscribers, the game ends.
+
+![ARC_Paperboy](https://github.com/donxito/game_paperboy/assets/96595540/c7c3641c-7c7a-4612-b10d-4f695b097e6d)
+
 
 # Project Planning
 
@@ -34,3 +37,13 @@ You must hit the postbox with the newspaper.
 
 
 [Play the Game](https://donxito.github.io/game_paperboy/)
+
+
+## Screenshoots
+
+
+<img width="1490" alt="1" src="https://github.com/donxito/game_paperboy/assets/96595540/f7fa585f-fbe4-433d-b230-c0162069bf29">
+
+<img width="1490" alt="2" src="https://github.com/donxito/game_paperboy/assets/96595540/133e2d47-070d-43b7-b25f-29f7cc80588a">
+
+<img width="1490" alt="3" src="https://github.com/donxito/game_paperboy/assets/96595540/5c7a277d-cd1f-46a8-8e29-93ed76a2e738">
