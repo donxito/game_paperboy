@@ -100,16 +100,24 @@ body {
     justify-content: space-around; 
 }
 
-
-
-
 p {
     font-size: 3.5rem;
 }
 
-.arrows ,.space{
+.arrows {
+    padding-top: 40px;
+    width: 12vw;
+    height: auto;
+}
+
+.space {
+    padding-top: 80px;
     width: 10vw;
-    animation: arrow-spinning 10s infinite;
+    height: 6vh
+}
+
+.arrows ,.space{
+    animation: arrow-spinning 5s infinite;
 }
 
 
@@ -160,10 +168,6 @@ p {
 }
 
 
-
-
-
-
 #game-container {
     background-image: url("../img/Soil_Tile.png");
     height: 100vh;
@@ -208,6 +212,10 @@ p {
 }
 
 .obstacle {
+    position: absolute;
+}
+
+.obstacle2 {
     position: absolute;
 }
 

@@ -106,7 +106,7 @@ setInterval(() => {
         obstacle.moveObstacle();
         obstacle.checkCollision();
     })
-}, 80);
+}, 100);
 
 
 

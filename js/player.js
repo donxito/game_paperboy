@@ -3,13 +3,13 @@ class Player {
         this.positionX = 0; // horizontal position
         this.positionY = 25; // vertical position
         
-        this.width = 10; // width size
-        this.height = 12; // height size
+        this.width = 8; // width size
+        this.height = 10; // height size
 
-        this.speed = 10;  
+        this.speed = 14;  
 
         this.score = 0;
-        this.health = 20;
+        this.health = 25;
 
         this.player = null;
 
@@ -129,6 +129,7 @@ class Player {
         }
     } 
 }
+
 
 
 function handleKeyPress(event) {
