@@ -2,7 +2,7 @@ class Obstacle {
     constructor(player) {
         this.player = player
         this.width = 18;
-        this.height = 18;
+        this.height = 17;
 
         this.obstacle = null;
 
@@ -26,7 +26,7 @@ class Obstacle {
 
         // create and append an image element
         const obstacleImage = document.createElement("img");
-        obstacleImage.src = "./img/car.png";
+        obstacleImage.src = "./img/car2.png";
         obstacleImage.style.width = "100%";
         obstacleImage.style.height = "100%";
         this.obstacle.appendChild(obstacleImage)
@@ -41,7 +41,7 @@ class Obstacle {
 
         const gameRoadHeight = document.getElementById("game-road").offsetHeight;
         const maxBottom = gameRoadHeight - this.height;
-        const randomBottom = Math.floor(Math.random() * (maxBottom / 2)) + maxBottom / 4;
+        const randomBottom = Math.floor(Math.random() * (maxBottom / 2)) + maxBottom / 8;
     
         
         // set initial positionY
@@ -98,7 +98,7 @@ const obstacles = []; // array of obstacles
 setInterval(() => {
     const newObstacles = new Obstacle(player);
     obstacles.push(newObstacles);
-}, 1000);
+}, 1200);
 
 // move obstacles
 setInterval(() => {
@@ -106,7 +106,7 @@ setInterval(() => {
         obstacle.moveObstacle();
         obstacle.checkCollision();
     })
-}, 100);
+}, 200);
 
 
 

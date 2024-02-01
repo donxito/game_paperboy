@@ -105,7 +105,7 @@ class Player {
             if (this.score <= 5) {
                 alert(`${this.score} 📰 is not good enough, you should try again!`);
             } else {
-                alert(` Good job! ${this.score} 📰 is professional!`);
+                alert(`Good job! ${this.score} 📰 is professional!`);
             }
 
             location.href = "game-over.html"
@@ -116,6 +116,12 @@ class Player {
 
     scoring() {
         this.score++;
+
+        if (this.score === 10) {
+            const win = new Audio("sound/win.wav");
+            win.play();
+            alert(`${this.score} 📰! Congratulations, you got the job!`)
+        }
 
         const scoreContainer = document.getElementById("score-display");
 

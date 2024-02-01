@@ -45,6 +45,12 @@ function showTime() {
 
         // Display the time
         time.innerText = `${min}:${sec < 10 ? '0' : ''}${sec}`;
+
+        if (min === 1) {
+            const win = new Audio("sound/win.wav");
+            win.play();
+            alert(`Congratulations, you got the job!`)
+        }
     }
 
     // Update the timer every second
