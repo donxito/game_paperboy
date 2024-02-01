@@ -6,7 +6,7 @@ class Player {
         this.width = 6; // width size
         this.height = 8; // height size
 
-        this.speed = 14;  
+        this.speed = 10;  
 
         this.score = 0;
         this.health = 25;
