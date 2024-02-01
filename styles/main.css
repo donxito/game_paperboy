@@ -41,7 +41,8 @@ body {
     width: 80vw;
     height: 90vh;
     position: relative;
-    border: 2px solid rgb(0, 0, 0);
+    border: 1px solid rgb(43, 0, 255);
+    border-radius: 10px;
     box-shadow: 
     0px 6px 20px 10px rgb(224, 93, 250);
     display: flex;
@@ -63,7 +64,8 @@ body {
     position: relative;
     width: 80vw;
     height: 90vh;
-    border: 2px solid rgb(0, 0, 0);
+    border: 1px solid rgb(43, 0, 255);
+    border-radius: 10px;
 
     transform: translate(-50%, 50%);
     text-align: center;
@@ -71,6 +73,7 @@ body {
 
 #game-over ,a {
     box-shadow:  0px 6px 20px 10px rgb(224, 93, 250);
+    border: 1px solid rgb(43, 0, 255);
     border-radius: 10px;
     padding: 10px 20px;
 }
@@ -78,6 +81,7 @@ body {
 
 #game-over ,a:hover {
     box-shadow: 0px 6px 20px 10px rgba(255,213,3,1);
+    border: 1px solid rgb(43, 0, 255);
     border-radius: 10px;
     padding: 10px 20px;
 }
