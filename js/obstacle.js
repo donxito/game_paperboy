@@ -2,7 +2,7 @@ class Obstacle {
     constructor(player) {
         this.player = player
         this.width = 18;
-        this.height = 16;
+        this.height = 18;
 
         this.obstacle = null;
 
@@ -10,9 +10,9 @@ class Obstacle {
         this.positionY = 0;
 
         this.createObstacleElement();
-
       
     }
+
 
     createObstacleElement() {
         // create the element
@@ -55,7 +55,7 @@ class Obstacle {
 
 
     moveObstacle() {
-        this.positionX -= 7; //speed
+        this.positionX -= 5; //speed
         this.obstacle.style.left = `${this.positionX}vw`;
 
 

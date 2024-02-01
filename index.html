@@ -17,20 +17,23 @@
     <div id="game-canvas">
         <!--div for game intro---------->
         <div id="game-intro"></div>
-        
-        <a href="./game-start.html">Start Paperboy?</a>
+
+        <audio id="game-audio" loop>
+            <source src="soundtrack.wav" type="audio/wav">
+            Your browser does not support the audio tag.
+        </audio>
 
 
-
+        <a href="./game-start.html" id="start-button">Try Paperboy?</a>
+        <br>
+        <p>Use the arrows to control Paperboy,  spacebar to throw.</p>
+        <div id="image-container">
+            <img class="arrows " src="./img/buttons.png" alt="arrows">
+            <img class="space " src="./img/space.png" alt="space">
+        </div>
     </div>
-   
 
-
-
-
-
-
-
+ 
 
 
 
@@ -40,7 +43,7 @@
     <script src="./js/obstacle.js"></script>
     <script src="./js/main.js"></script>
 
-  
+
 </body>
 
 </html>

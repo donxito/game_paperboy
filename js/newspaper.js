@@ -2,7 +2,7 @@ class Newspaper {
     constructor(player) {
         this.positionX = player.positionX;
         this.positionY = player.positionY;
-        this.width = 34;
+        this.width = 32;
         this.height = 44;
         this.speed = 6;
         this.direction = 1;

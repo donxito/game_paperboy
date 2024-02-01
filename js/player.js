@@ -9,7 +9,7 @@ class Player {
         this.speed = 10;  
 
         this.score = 0;
-        this.health = 15;
+        this.health = 20;
 
         this.player = null;
 
@@ -40,6 +40,10 @@ class Player {
         // append to the DOM parent
         const playerElement = document.getElementById("game-container");
         playerElement.appendChild(this.player);
+
+        // start sound
+        const startSound = new Audio("sound/press-start.wav");
+        startSound.play();
     }
 
     updatePlayerPosition() {
@@ -89,22 +93,26 @@ class Player {
 
     collide() {
         this.health--;
-        
+        // health container
         const healthContainer = document.getElementById("bar");
         const initialHealth = 20;
         healthContainer.style.width = `${(this.health / initialHealth) * 100}%`;
 
         const crash = new Audio("sound/Hit_3.wav");
-           crash.play();
+        crash.play();
     
         if (this.health === 0) {
-            alert(`Game Over! You scored ${this.score}`);
+            if (this.score <= 5) {
+                alert(`${this.score} 📰 is not good enough, you should try again!`);
+            } else {
+                alert(` Good job! ${this.score} 📰 is professional!`);
+            }
+
             location.href = "game-over.html"
-            //location.reload();
-         
-        }
+        }     
+     
     }
-    
+
 
     scoring() {
         this.score++;
