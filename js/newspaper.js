@@ -3,7 +3,7 @@ class Newspaper {
         this.positionX = player.positionX;
         this.positionY = player.positionY;
         this.width = 32;
-        this.height = 44;
+        this.height = 40;
         this.speed = 6;
         this.direction = 1;
         this.traveledDistance = 0;

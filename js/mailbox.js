@@ -89,7 +89,7 @@ const mailboxes = []; // array of mailboxes
 setInterval(() => {
     const newMailbox = new Mailbox(game.player);
     mailboxes.push(newMailbox);
-}, 66);
+}, 6000);
 
 // move mailboxes
 setInterval(() => {

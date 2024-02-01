@@ -1,8 +1,8 @@
 class Obstacle2 {
     constructor(player) {
         this.player = player
-        this.width = 4;
-        this.height = 4;
+        this.width = 3;
+        this.height = 3;
 
         this.obstacle2 = null;
 

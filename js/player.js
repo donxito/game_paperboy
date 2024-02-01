@@ -3,8 +3,8 @@ class Player {
         this.positionX = 0; // horizontal position
         this.positionY = 25; // vertical position
         
-        this.width = 8; // width size
-        this.height = 10; // height size
+        this.width = 6; // width size
+        this.height = 8; // height size
 
         this.speed = 14;  
 
