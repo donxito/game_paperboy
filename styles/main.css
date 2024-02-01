@@ -52,6 +52,7 @@ body {
     justify-content:center;
     overflow: hidden;
     margin: auto;
+    flex-wrap: wrap;
 
 }
 
@@ -92,7 +93,6 @@ body {
 
 
 #image-container {
-    padding: 60px;
     width: 80vw;
     display: flex;
     flex-direction: row;
@@ -103,7 +103,7 @@ body {
 
 p {
     font-size: 3.5rem;
-    padding-top: 10px;
+  
 }
 
 .arrows {
