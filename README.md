@@ -49,3 +49,6 @@ You must hit the postbox with the newspaper.
 
 
 <img width="1490" alt="3" src="https://github.com/donxito/game_paperboy/assets/96595540/5c7a277d-cd1f-46a8-8e29-93ed76a2e738">
+
+
+[Play the Game](https://donxito.github.io/game_paperboy/)
