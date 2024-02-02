@@ -102,10 +102,10 @@ class Player {
         crash.play();
     
         if (this.health === 0) {
-            if (this.score <= 5) {
-                alert(`${this.score} 📰 is not good enough, you should try again!`);
+            if (this.score <= 10) {
+                alert(`${this.score} 📰 is not good enough, you must do 15!`);
             } else {
-                alert(`Good job! ${this.score} 📰 is professional!`);
+                alert(`Good job! ${this.score} 📰 is professional, but you must do 15!`);
             }
 
             location.href = "game-over.html"
@@ -117,7 +117,7 @@ class Player {
     scoring() {
         this.score++;
 
-        if (this.score === 10) {
+        if (this.score === 15) {
             const win = new Audio("sound/win.wav");
             win.play();
             alert(`${this.score} 📰! Congratulations, you got the job!`)
