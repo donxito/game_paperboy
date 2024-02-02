@@ -1,6 +1,4 @@
 
-
-
 @import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
 
 * {
@@ -123,6 +121,13 @@ p {
     height: 20vh
 }
 
+.newspaper-intro {
+    padding-top: 100px;
+    height: 10vh
+    
+
+
+}
 
 .over {
     padding-bottom: 100px;
