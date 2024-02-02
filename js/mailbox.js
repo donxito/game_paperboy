@@ -57,7 +57,7 @@ class Mailbox {
     checkCollision() {
         // check for collision with the player
         // get the dimensions of the player and the obstacle
-        const playerDomRect = this.player.player.getBoundingClientRect();
+        const playerDomRect = game.player.player.getBoundingClientRect();
         const mailboxDomRect = this.mailbox.getBoundingClientRect();
 
         // formula to check collision
